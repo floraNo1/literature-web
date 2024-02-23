@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>关东组文献分析首页</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/background.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <script src="{{ url_for('static', filename='jquery/jquery.3.6.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/search.js') }}"></script>
+    <style>
+.navbar-nav {
+  position: relative;
+  bottom: -30px;
+  left: -70px;
+}
+</style>
+</head>
+<body class="home_bg">
+<div class="box2">
+    <img src="{{ url_for('static', filename='pngs/com.png') }}">
+</div>
+<br/>
+
+<div class="box1">
+    <img src="{{ url_for('static', filename='pngs/web_logo.png') }}">
+</div>
+
+<div class="box5">
+    <form class="form-inline my-2 my-lg-0" method="GET" >
+        <input type="text" id="searchInput" placeholder="请输入检索关键字或作者" value="" style="width:400px;height:40px" name="q">
+        <div class="search-container">
+            <button class="btn active" data-action="{{ url_for('search.search1') }}" id="searchByDocBtn" type="submit">关键字搜索</button>
+            <button class="btn" data-action="{{ url_for('search.search2') }}" id="searchByAuthorBtn" type="submit">作者搜索</button>
+        </div>
+    </form>
+</div>
+
+<div class="box4">
+    <dl>
+        <dd style="color:black;">热搜榜:</dd>
+        <dd>1.<a href="https://ascelibrary.org/doi/10.1061/%28ASCE%290887-3801%281987%291%3A1%2861%29" target="_blank">Microcomputers in Civil Engineering: Use and Misuse</a></dd>
+        <dd>2.<a href="https://ascelibrary.org/doi/10.1061/%28ASCE%290887-3801%281987%291%3A2%28128%29" target="_blank">Genetic Algorithms in Pipeline Optimization</a></dd>
+
+        <dd>3.<a href="https://ascelibrary.org/doi/10.1061/%28ASCE%290887-3801%281987%291%3A2%2899%29" target="_blank">Settlement of Footings on Sand by CPT Data</a></dd>
+        <dd>4.<a href="https://ascelibrary.org/doi/10.1061/%28ASCE%290887-3801%281987%291%3A3%28175%29" target="_blank">Graphic Input to Cyclone</a></dd>
+        <dd>5.<a href="https://ascelibrary.org/doi/10.1061/%28ASCE%290887-3801%281987%291%3A1%281%29" target="_blank">Detection Probabilities for Continuous Line Search</a> </dd>
+        <dd>6.<a href="https://ascelibrary.org/doi/10.1061/%28ASCE%290887-3801%281987%291%3A1%2820%29"target="_blank"> Optimal Plastic Design of Frames</a></dd>
+    </dl>
+</div>
+<div class="box6">
+<ul class="navbar-nav">
+                  {% if user %}
+                    <li class="nav-item">
+                      <span class="nav-link">{{ user.email }}</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('user.logout') }}">退出登录</a>
+                    </li>
+                  {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('user.login') }}">登录</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('user.register') }}">注册</a>
+                    </li>
+                  {% endif %}
+                </ul>
+</div>
+
+</div>
+<footer>技术支持：山东大学（威海）数科班 关东组 © 2024</footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="文献检索,关东组,山东大学（威海）,数科班,文献分析">
+    <meta name="description" content="山东大学威海校区22级数科班关东组开发基于文献分析的文献检索网站">
+    <title>注册</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reset.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style2.css') }}">
+	<script src="{{ url_for('static', filename='jquery/jquery.3.6.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/register.js') }}"></script>
+</head>
+<body class="login_bg">
+    <div id="login_content">
+		<div class="web_logo">
+			<img class="img-responsive" src="{{ url_for('static', filename='pngs/web_logo.png') }}" width="300px" height="800px">
+		</div>
+		<div class="login_box">
+				<form id="loginForm" name="loginForm" action="{{ url_for('user.register') }}" method="POST">
+					<ul id="ul1" >
+						<li class="box_bt">用户注册</li>
+						<li class="input-group input_li">
+							<div class="input-container">
+
+							<input type="text" class="form-control" id="email" name="email" placeholder="请输入邮箱" value="" autofocus>
+							</div>
+						</li>
+						<li id="input_li2">
+							<div class="input-container">
+							<input type="text" class="form-control" id="Captcha" name="captcha" placeholder="请输入验证码" value="" autofocus>
+								<div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button" id="captcha-btn">获取验证码</button>
+                            </div>
+							</div>
+						</li>
+						<li class="input-group input_li">
+							<div class="input-container">
+							<input type="password" class="form-control" id="userPassword1" name="password"  autocomplete="new-version" placeholder="请输入密码(应为5-20位）" value="">
+							</div>
+						</li>
+					    <li class="input-group input_li">
+							<div class="input-container">
+							<input type="password" class="form-control" id="userPassword2" name="password_confirm"  autocomplete="new-version" placeholder="请确认密码" value="">
+							</div>
+						</li>
+
+						<li class="input_li">
+
+						   <button type="submit" class="btn btn-primary login_btn" >注&nbsp;&nbsp;&nbsp;册</button>
+
+						</li>
+						<li class="input_li"  style="color: darkblue; margin-bottom: -2;height: 10px;">
+						&nbsp;<a href="{{ url_for('user.login') }}"  target="_self">返回登录</a><br>
+
+						</li>
+
+					</ul>
+				</form>
+				</div>
+	   </div>
+   </div>
+
+  <footer>技术支持：山东大学（威海）数科班 关东组 © 2024</footer>
+  </body>
+</html>

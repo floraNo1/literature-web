@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="文献检索,关东组,山东大学（威海）,数科班,文献分析">
+    <meta name="description" content="山东大学威海校区22级数科班关东组开发基于文献分析的文献检索网站">
+    <title>登录</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reset.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="login_bg">
+    <div id="login_content">
+		<div class="web_logo">
+			<img class="img-responsive" src="{{ url_for('static', filename='pngs/web_logo.png') }}" width="300px" height="800px">
+		</div>
+		<div class="login_box">
+				<form id="loginForm" name="loginForm" action="{{ url_for('user.login') }}" method="POST">
+					<ul id="ul1" >
+						<li class="box_bt">
+<!--							<img class="img-responsive" src="{{ url_for('static', filename='pngs/user_icon.png') }}" style="float:left; margin:8px 8px 0 0">-->
+							用户登录</li>
+						<li class="input-group input_li">
+							<div class="input-container">
+							<img src="{{ url_for ('static', filename='pngs/user_name.png') }}" width="30px">
+							<input type="email" class="form-control" id="userAccount" name="email" placeholder="请输入邮箱" value="" autofocus>
+							</div>
+						</li>
+						<li class="input-group input_li">
+							<div class="input-container">
+							<img src="{{ url_for ('static', filename='pngs/password.png') }}" width="33px">
+							<input type="password" class="form-control" id="userPassword" name="password"  autocomplete="new-version" placeholder="请输入密码" value="">
+							</div>
+						</li>
+
+
+						<li class="input_li">
+
+						   <button type="submit" class="btn btn-primary login_btn" >登&nbsp;&nbsp;&nbsp;录</button>
+
+						</li>
+						<li class="input_li"  style="color: darkblue; margin-bottom: -2;height: 10px;">
+						&nbsp;<a href="{{ url_for('user.register') }}"  target="_self">无账号？去注册</a><br>
+
+						</li>
+
+					</ul>
+				</form>
+				</div>
+	   </div>
+   </div>
+
+  <footer>技术支持：山东大学（威海）数科班 关东组 © 2024</footer>
+  </body>
+</html>

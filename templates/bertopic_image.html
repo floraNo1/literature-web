@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BERTopic Analysis Image</title>
+   <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #343a40; /* 暗灰色背景 */
+            color: #fff; /* 为了确保文本可读，设为白色 */
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            color: #333; /* 正文文本颜色调回深色 */
+        }
+
+        p {
+            text-align: center;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='pngs/berchart.png') }}"  style="display: block; margin: 0 auto">
+        <img src="{{ url_for('static', filename='pngs/newplot3.png') }}"  style="display: block; margin: 0 auto">
+        <img src="{{ url_for('static', filename='pngs/newplot4.png') }}"  style="display: block; margin: 0 auto">
+        <img src="{{ url_for('static', filename='pngs/newplot5.png') }}"  style="display: block; margin: 0 auto">
+
+    </div>
+</body>
+</html>

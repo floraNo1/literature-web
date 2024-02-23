@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>关东组文献分析首页</title>
+    <meta name="keywords" content="文献检索,关东组,山东大学（威海）,数科班,文献分析"><meta name="description" content="山东大学威海校区22级数科班关东组开发基于文献分析的文献检索网站">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}" />
+    <script src="{{ url_for('static', filename='jquery/jquery.3.6.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/search.js') }}"></script>
+</head>
+
+<body class="home_bg">
+	<div class="box2">
+		<img src="{{ url_for('static', filename='pngs/com.png') }}">
+	</div>
+<form id="form1" name="quicksearch" method="GET">
+<!-- content start -->
+<div class="contbox_a">
+	<p class="txc"><img src="{{ url_for('static', filename='pngs/web_logo.png') }}" width="300px"/></p>
+	    <div class="hit">
+	    	<span class="ipt_wr">
+                <input type="text" id="searchInput" placeholder="请输入检索关键字或作者" class="ipt_wb" style="color:#B0B0B0" name="q"/>
+            </span>
+	    </div>
+    <form class="form-inline my-2 my-lg-0">
+	    <div class="search-container">
+            <button class="btn active" data-action ="{{ url_for('search.search1') }}" id="searchByDocBtn" type="submit">关键字搜索</button>
+            <button class="btn active" data-action ="{{ url_for('search.search2') }}" id="searchByAuthorBtn" type="submit">作者搜索</button>
+        </div>
+    </form>
+</div>
+
+		<div class="box4">
+			<dl>
+				<img src="{{ url_for('static', filename='pngs/134.gif') }}" width="20px"> <dd style="color:brown;">热搜榜:</dd>
+				<dd>1.<a href="https://ascelibrary.org/doi/full/10.1061/%28ASCE%29CP.1943-5487.0001051" target="_blank" style="color: black;">BIM-Enabled Infrastructure Asset Management Using Information Containers and Semantic Web</a></dd>
+				<dd>2.<a href="https://ascelibrary.org/doi/full/10.1061/%28ASCE%29CP.1943-5487.0000918" target="_blank" style="color: black;">Machine Learning for Crack Detection: Review and Model Performance Comparison</a></dd>
+		
+				<dd>3.<a href="https://ascelibrary.org/doi/10.1061/JCCEE5.CPENG-5548" target="_blank" style="color: black;">Developing a Machine-Learning Model to Predict Clash Resolution Options</a></dd>
+				<dd>4.<a href="https://ascelibrary.org/doi/10.1061/JCCEE5.CPENG-5406" target="_blank" style="color: black;"> GAN-Augmented CNN Approach for Automated Roadside Safety Assessment of Rural Roadways</a></dd>
+				<dd>5.<a href="https://ascelibrary.org/doi/10.1061/%28ASCE%290887-3801%281987%291%3A1%281%29" target="_blank" style="color: black;">Detection Probabilities for Continuous Line Search</a> </dd>
+				<dd>6.<a href="https://ascelibrary.org/doi/10.1061/%28ASCE%290887-3801%281987%291%3A1%2820%29"target="_blank" style="color: black;"> Optimal Plastic Design of Frames</a></dd>
+			</dl>
+		</div>
+		
+<div class="box6">
+<ul class="navbar-nav">
+                  {% if user %}
+                    <li class="nav-item">
+                      <span class="nav-link">{{ user.email }}</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('user.logout') }}">退出登录</a>
+                    </li>
+                  {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('user.login') }}">登录</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('user.register') }}">注册</a>
+                    </li>
+                  {% endif %}
+                </ul>
+</div>
+    <div class="box8">
+        <a class="btn-link" href="{{ url_for('analysis.bertopic_analysis_topic_info') }}">主题分类结果</a>
+        </div>
+
+    <div class="box9">
+        <a class="btn-link" href="{{ url_for('analysis.bertopic_analysis_topic_image') }}">可视化结果</a>
+        </div>
+    <footer>技术支持：山东大学（威海）数科班 关东组 © 2024</footer>
+</form>
+
+
+</body>
+</html>

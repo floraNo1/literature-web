@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>团队成员介绍</title>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style3.css') }}" />
+<style>
+    .image{
+         width: 80px;
+         height:80px;
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="block team">
+	<h2 class="title">our team</h2>
+	<div class="items">
+		<ul>
+			<li>
+				<a href="#">
+					<img src="{{ url_for('static', filename='pngs/liu.jpg') }}" class="image"/>
+					<div class="item-txt">
+						<p class="title">刘泽瑄</p>
+						<p class="desc">关东组内的福袋一枚，负责数据库部分和网站部署～
+						</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="{{ url_for('static', filename='pngs/liang.jpg') }}" class="image"/>
+					<div class="item-txt">
+						<p class="title">梁羽枫</p>
+						<p class="desc">白萝卜成精了落在关东煮组，主要泡在数据库和服务器两格汤里~
+						</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="{{ url_for('static', filename='pngs/tong.jpg') }}" class="image"/>
+					<div class="item-txt">
+						<p class="title">王童</p>
+						<p class="desc">社会的边角料，关东组的小骄傲，负责后端搭建和前端扩充～
+						</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="{{ url_for('static', filename='pngs/chen.jpg') }}" class="image"/>
+					<div class="item-txt">
+						<p class="title">陈智鹏</p>
+						<p class="desc">关东组成员一枚，负责后端开发部分～
+						</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="{{ url_for('static', filename='pngs/hu.jpg') }}" class="image"/>
+					<div class="item-txt">
+						<p class="title">呼芳如</p>
+						<p class="desc">可可爱爱，没有脑袋，擅长躺在床上，擅长浮在汤里，负责前端界面~
+						</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="{{ url_for('static', filename='pngs/si.jpg') }}" class="image"/>
+					<div class="item-txt">
+						<p class="title">司开心</p>
+						<p class="desc">关东组海苔鸡肉卷一枚，负责前端界面~
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="block team">
+    <a class="btn" href="{{ url_for('search.index') }}" style="position: absolute; top: 0; left: 0;">
+        <img src="{{ url_for('static', filename='pngs/cat.png') }}" width=100px height=100px>
+    </a>
+</div>
+
+
+</body>
+</html>

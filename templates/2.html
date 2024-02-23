@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>检索结果</title>
+   <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #343a40; /* 暗灰色背景 */
+            color: #fff; /* 为了确保文本可读，设为白色 */
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            color: #333; /* 正文文本颜色调回深色 */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #f8f9fa;
+        }
+
+        table, th, td {
+            border: 1px solid #dee2e6;
+        }
+
+        table th, table td {
+            padding: 12px 15px;
+            text-align: center; /* Centers table headers and cells */
+        }
+
+        table th {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        p {
+            text-align: center;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p style="font-size: 28px;">Retrieve results</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Authors</th>
+                <th>Title</th>
+                <th>Keywords</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in quotes %}
+            <tr>
+                <td>{{ i.Author_Full_Names }}</td>
+                <td>{{ i.Article_Title }}</td>
+                <td>{{ i.Author_Keywords }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
